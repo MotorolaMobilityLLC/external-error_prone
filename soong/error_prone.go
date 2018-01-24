@@ -37,6 +37,7 @@ func init() {
 		"-Xep:AsyncCallableReturnsNull:ERROR",
 		"-Xep:AsyncFunctionReturnsNull:ERROR",
 		"-Xep:BundleDeserializationCast:ERROR",
+		"-Xep:ChainingConstructorIgnoresParameter:ERROR",
 		"-Xep:CompatibleWithAnnotationMisuse:ERROR",
 		"-Xep:CompileTimeConstant:ERROR",
 		"-Xep:DaggerProvidesNull:ERROR",
