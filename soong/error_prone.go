@@ -42,6 +42,7 @@ func init() {
 		"-Xep:CompileTimeConstant:ERROR",
 		"-Xep:DaggerProvidesNull:ERROR",
 		"-Xep:DoNotCall:ERROR",
+		"-Xep:EqualsNaN:ERROR",
 		"-Xep:ForOverride:ERROR",
 		"-Xep:FunctionalInterfaceMethodChanged:ERROR",
 		"-Xep:FuturesGetCheckedIllegalExceptionType:ERROR",
