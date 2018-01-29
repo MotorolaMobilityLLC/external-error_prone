@@ -98,6 +98,9 @@ func init() {
 		"-XDuseGraphInference=true",
 		"-XDandroidCompatible=true",
 		"-XepAllErrorsAsWarnings",
+		// We are not interested in Guava recommendations
+                // for String.split.
+                "-Xep:StringSplitter:OFF",
 		"-Xmaxwarns 9999999",  // As we emit errors as warnings,
 		                       // increase the warning limit.
 	}, " ")
