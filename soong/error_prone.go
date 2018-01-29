@@ -58,7 +58,8 @@ func init() {
 		"-Xep:JavaxInjectOnAbstractMethod:ERROR",
 		"-Xep:JUnit4SetUpNotRun:ERROR",
 		"-Xep:JUnit4TearDownNotRun:ERROR",
-		"-Xep:JUnit4TestNotRun:ERROR",
+                // Temporarily disabled for update. b/72076216
+		// "-Xep:JUnit4TestNotRun:ERROR",
 		"-Xep:JUnitAssertSameCheck:ERROR",
 		"-Xep:LiteByteStringUtf8:ERROR",
 		"-Xep:LoopConditionChecker:ERROR",
