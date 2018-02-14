@@ -55,6 +55,7 @@ func init() {
 		"-Xep:IndexOfChar:ERROR",
 		"-Xep:InjectMoreThanOneScopeAnnotationOnClass:ERROR",
 		"-Xep:InvalidPatternSyntax:ERROR",
+		"-Xep:IsInstanceOfClass:ERROR",
 		"-Xep:JavaxInjectOnAbstractMethod:ERROR",
 		"-Xep:JUnit4SetUpNotRun:ERROR",
 		"-Xep:JUnit4TearDownNotRun:ERROR",
