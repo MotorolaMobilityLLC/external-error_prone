@@ -78,6 +78,7 @@ func init() {
 		"-Xep:PreconditionsCheckNotNullPrimitive:ERROR",
 		"-Xep:ProtoFieldNullComparison:ERROR",
 		"-Xep:ProvidesMethodOutsideOfModule:ERROR",
+		"-Xep:RandomCast:ERROR",
 		"-Xep:RestrictedApiChecker:ERROR",
 		"-Xep:SelfAssignment:ERROR",
 		"-Xep:StreamToString:ERROR",
