@@ -54,6 +54,7 @@ func init() {
 		"-Xep:ImmutableModification:ERROR",
 		"-Xep:IncompatibleArgumentType:ERROR",
 		"-Xep:IndexOfChar:ERROR",
+		"-Xep:InfiniteRecursion:ERROR",
 		"-Xep:InjectMoreThanOneScopeAnnotationOnClass:ERROR",
 		"-Xep:InvalidPatternSyntax:ERROR",
 		"-Xep:IsInstanceOfClass:ERROR",
