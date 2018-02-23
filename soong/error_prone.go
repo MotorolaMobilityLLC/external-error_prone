@@ -87,6 +87,7 @@ func init() {
 		"-Xep:SuppressWarningsDeprecated:ERROR",
 		"-Xep:ThrowIfUncheckedKnownChecked:ERROR",
 		"-Xep:ThrowNull:ERROR",
+		"-Xep:TruthSelfEquals:ERROR",
 		"-Xep:TypeParameterQualifier:ERROR",
 		"-Xep:UnnecessaryTypeArgument:ERROR",
 		"-Xep:UnusedAnonymousClass:ERROR",
