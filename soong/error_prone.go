@@ -60,6 +60,7 @@ func init() {
 		"-Xep:InvalidPatternSyntax:ERROR",
 		"-Xep:IsInstanceOfClass:ERROR",
 		"-Xep:JavaxInjectOnAbstractMethod:ERROR",
+		"-Xep:JUnit3TestNotRun:ERROR",
 		"-Xep:JUnit4SetUpNotRun:ERROR",
 		"-Xep:JUnit4TearDownNotRun:ERROR",
                 // Temporarily disabled for update. b/72076216
