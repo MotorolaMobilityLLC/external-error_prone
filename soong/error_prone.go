@@ -42,6 +42,7 @@ func init() {
 		"-Xep:CompatibleWithAnnotationMisuse:ERROR",
 		"-Xep:CompileTimeConstant:ERROR",
 		"-Xep:DaggerProvidesNull:ERROR",
+		"-Xep:DeadThread:ERROR",
 		"-Xep:DoNotCall:ERROR",
 		"-Xep:EqualsNaN:ERROR",
 		"-Xep:ForOverride:ERROR",
@@ -59,6 +60,7 @@ func init() {
 		"-Xep:InvalidPatternSyntax:ERROR",
 		"-Xep:IsInstanceOfClass:ERROR",
 		"-Xep:JavaxInjectOnAbstractMethod:ERROR",
+		"-Xep:JUnit3TestNotRun:ERROR",
 		"-Xep:JUnit4SetUpNotRun:ERROR",
 		"-Xep:JUnit4TearDownNotRun:ERROR",
                 // Temporarily disabled for update. b/72076216
@@ -86,6 +88,7 @@ func init() {
 		"-Xep:SuppressWarningsDeprecated:ERROR",
 		"-Xep:ThrowIfUncheckedKnownChecked:ERROR",
 		"-Xep:ThrowNull:ERROR",
+		"-Xep:TruthSelfEquals:ERROR",
 		"-Xep:TypeParameterQualifier:ERROR",
 		"-Xep:UnnecessaryTypeArgument:ERROR",
 		"-Xep:UnusedAnonymousClass:ERROR",
