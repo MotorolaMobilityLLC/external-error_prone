@@ -38,7 +38,6 @@ func init() {
 		"-Xep:AsyncFunctionReturnsNull:ERROR",
 		"-Xep:BundleDeserializationCast:ERROR",
 		"-Xep:ChainingConstructorIgnoresParameter:ERROR",
-		"-Xep:CheckReturnValue:ERROR",
 		"-Xep:ComparisonOutOfRange:ERROR",
 		"-Xep:CompatibleWithAnnotationMisuse:ERROR",
 		"-Xep:CompileTimeConstant:ERROR",
