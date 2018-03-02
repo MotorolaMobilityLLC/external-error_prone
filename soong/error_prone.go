@@ -43,6 +43,7 @@ func init() {
 		"-Xep:CompatibleWithAnnotationMisuse:ERROR",
 		"-Xep:CompileTimeConstant:ERROR",
 		"-Xep:DaggerProvidesNull:ERROR",
+		"-Xep:DeadException:ERROR",
 		"-Xep:DeadThread:ERROR",
 		"-Xep:DoNotCall:ERROR",
 		"-Xep:EqualsNaN:ERROR",
