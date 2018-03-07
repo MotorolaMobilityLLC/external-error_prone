@@ -39,6 +39,7 @@ func init() {
 		"-Xep:BundleDeserializationCast:ERROR",
 		"-Xep:ChainingConstructorIgnoresParameter:ERROR",
 		"-Xep:CheckReturnValue:ERROR",
+		"-Xep:CollectionIncompatibleType:ERROR",
 		"-Xep:ComparisonOutOfRange:ERROR",
 		"-Xep:CompatibleWithAnnotationMisuse:ERROR",
 		"-Xep:CompileTimeConstant:ERROR",
