@@ -15,7 +15,7 @@
 java_import {
     name: "error_prone_annotations",
     host_supported: true,
-    jars: ["error_prone/error_prone_annotations-2.2.0.jar"],
+    jars: ["error_prone/error_prone_annotations-2.3.1.jar"],
 }
 
 subdirs = ["soong"]
