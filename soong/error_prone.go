@@ -15,26 +15,23 @@
 package error_prone
 
 import (
-	"strings"
-
 	"android/soong/java/config"
 )
 
 func init() {
 	// These values are set into build/soong/java/config/config.go so that soong doesn't have any
 	// references to external/error_prone, which may not always exist.
-	config.ErrorProneJavacJar = "external/error_prone/javac/javac-9+181-r4173-1.jar"
-	config.ErrorProneJar = "external/error_prone/error_prone/error_prone_core-2.3.1-with-dependencies.jar"
-	config.ErrorProneClasspath = strings.Join([]string{
+	config.ErrorProneClasspath = []string{
+		"external/error_prone/error_prone/error_prone_core-2.3.1-with-dependencies.jar",
 		"external/error_prone/error_prone/error_prone_annotations-2.3.1.jar",
 		"external/error_prone/error_prone/error_prone_type_annotations-2.3.1.jar",
 		"external/error_prone/checkerframework/dataflow-2.5.0.jar",
 		"external/error_prone/checkerframework/javacutil-2.5.0.jar",
 		"external/error_prone/jFormatString/jFormatString-3.0.0.jar",
-	}, ":")
+	}
 
 	// The checks that are fatal to the build.
-	config.ErrorProneChecksError = strings.Join([]string{
+	config.ErrorProneChecksError = []string{
 		// Errorprone default severity ERROR
 		"-Xep:AndroidInjectionBeforeSuper:ERROR",
 		"-Xep:ArrayFillIncompatibleType:ERROR",
@@ -111,10 +108,10 @@ func init() {
 		"-Xep:VarTypeName:ERROR",
 		// Errorprone default severity WARNING
 		// Errorprone default severity SUGGESTION
-	}, " ")
+	}
 
 	// The checks that are not fatal to the build.
-	config.ErrorProneChecksWarning = strings.Join([]string{
+	config.ErrorProneChecksWarning = []string{
 		// Errorprone default severity ERROR
 		"-Xep:ArrayEquals:WARN",
 		"-Xep:ArrayHashCode:WARN",
@@ -248,11 +245,11 @@ func init() {
 		// "-Xep:WakelockReleasedDangerously:WARN",
 
 		// Errorprone default severity SUGGESTION
-	}, " ")
+	}
 
 	// The checks that are default-disabled and listed for completeness
 	// and simple experiments.
-	config.ErrorProneChecksDefaultDisabled = strings.Join([]string{
+	config.ErrorProneChecksDefaultDisabled = []string{
 		// Errorprone default severity ERROR
 		// "-Xep:AssistedInjectAndInjectOnSameConstructor:ERROR",
 		// "-Xep:AutoFactoryAtInject:ERROR",
@@ -335,10 +332,15 @@ func init() {
 		// "-Xep:UnnecessaryStaticImport:SUGGESTION",
 		// "-Xep:UseBinds:SUGGESTION",
 		// "-Xep:WildcardImport:SUGGESTION",
-	}, " ")
+	}
 
-	config.ErrorProneFlags = strings.Join([]string{
-		"com.google.errorprone.ErrorProneCompiler",
+	config.ErrorProneChecksOff = []string{
+		// We are not interested in Guava recommendations
+		// for String.split.
+		"-Xep:StringSplitter:OFF",
+	}
+
+	config.ErrorProneFlags = []string{
 		"-Xdiags:verbose",
 		"-XDcompilePolicy=simple",
 		"-XDallowBetterNullChecks=false",
@@ -347,10 +349,20 @@ func init() {
 		"-XDuseStructuralMostSpecificResolution=true",
 		"-XDuseGraphInference=true",
 		"-XDandroidCompatible=true",
-		// We are not interested in Guava recommendations
-		// for String.split.
-		"-Xep:StringSplitter:OFF",
-		"-Xmaxwarns 9999999",  // As we emit errors as warnings,
-		                       // increase the warning limit.
-	}, " ")
+		// As we emit errors as warnings,
+		// increase the warning limit.
+		"-Xmaxwarns 9999999",
+
+		// Extra flags needed by ErrorProne for OpenJDK9 from
+		// http://errorprone.info/docs/installation
+		"-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
+		"-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED",
+		"-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
+		"-J--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",
+		"-J--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED",
+		"-J--add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED",
+		"-J--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED",
+		"-J--add-exports=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED",
+		"-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED",
+	}
 }
