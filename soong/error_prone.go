@@ -390,6 +390,8 @@ func init() {
 		// We are not interested in Guava recommendations
 		// for String.split.
 		"-Xep:StringSplitter:OFF",
+		// b/117877739.
+		"-Xep:TruthAssertExpected:OFF",
 	}
 
 	config.ErrorProneFlags = []string{
