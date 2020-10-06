@@ -392,6 +392,9 @@ func init() {
 		"-Xep:StringSplitter:OFF",
 		// b/117877739.
 		"-Xep:TruthAssertExpected:OFF",
+		// b/170172949
+		"-Xep:MissingOverride:OFF",
+		"-Xep:UnnecessaryParentheses:OFF",
 	}
 
 	config.ErrorProneFlags = []string{
