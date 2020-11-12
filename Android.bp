@@ -15,7 +15,7 @@
 java_import {
     name: "error_prone_annotations",
     host_supported: true,
-    jars: ["error_prone/error_prone_annotations-2.3.2.jar"],
+    jars: ["error_prone/error_prone_annotations-2.4.0.jar"],
 }
 
 java_import {
@@ -25,7 +25,7 @@ java_import {
         "checkerframework/dataflow-2.5.3.jar",
         "checkerframework/javacutil-2.5.3.jar",
         "error_prone/error_prone_core-2.3.2-with-dependencies.jar",
-        "error_prone/error_prone_annotations-2.3.2.jar",
+        "error_prone/error_prone_annotations-2.4.0.jar",
         "javac/javac-9+181-r4173-1.jar",
         "jFormatString/jFormatString-3.0.0.jar",
     ],
