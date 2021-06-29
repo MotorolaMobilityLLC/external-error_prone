@@ -20,10 +20,10 @@ EP_TYPE_ANNO_JAR_URL="${JAR_REPO}/error_prone_type_annotations/${EP_VERSION}/err
 EP_TEST_HELPERS_JAR_URL="${JAR_REPO}/error_prone_test_helpers/${EP_VERSION}/error_prone_test_helpers-${EP_VERSION}.jar"
 JAVAC_JAR_URL="${JAR_REPO}/javac/${JAVAC_VERSION}/javac-${JAVAC_VERSION}.jar"
 JAVAC_SOURCES_JAR_URL="${JAR_REPO}/javac/${JAVAC_VERSION}/javac-${JAVAC_VERSION}-sources.jar"
-CF_DATAFLOW_JAR_URL="http://repo1.maven.org/maven2/org/checkerframework/dataflow/${CF_VERSION}/dataflow-${CF_VERSION}.jar"
-CF_DATAFLOW_SOURCES_JAR_URL="http://repo1.maven.org/maven2/org/checkerframework/dataflow/${CF_VERSION}/dataflow-${CF_VERSION}-sources.jar"
-CF_JAVACUTIL_JAR_URL="http://repo1.maven.org/maven2/org/checkerframework/javacutil/${CF_VERSION}/javacutil-${CF_VERSION}.jar"
-CF_JAVACUTIL_SOURCES_JAR_URL="http://repo1.maven.org/maven2/org/checkerframework/javacutil/${CF_VERSION}/javacutil-${CF_VERSION}-sources.jar"
+CF_DATAFLOW_JAR_URL="https://repo1.maven.org/maven2/org/checkerframework/dataflow-shaded/${CF_VERSION}/dataflow-shaded-${CF_VERSION}.jar"
+CF_DATAFLOW_SOURCES_JAR_URL="https://repo1.maven.org/maven2/org/checkerframework/dataflow-shaded/${CF_VERSION}/dataflow-shaded-${CF_VERSION}-sources.jar"
+CF_JAVACUTIL_JAR_URL="https://repo1.maven.org/maven2/org/checkerframework/javacutil/${CF_VERSION}/javacutil-${CF_VERSION}.jar"
+CF_JAVACUTIL_SOURCES_JAR_URL="https://repo1.maven.org/maven2/org/checkerframework/javacutil/${CF_VERSION}/javacutil-${CF_VERSION}-sources.jar"
 TOOLS_DIR=$(dirname $0)
 
 function update_jar {
