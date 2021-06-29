@@ -22,11 +22,11 @@ func init() {
 	// These values are set into build/soong/java/config/config.go so that soong doesn't have any
 	// references to external/error_prone, which may not always exist.
 	config.ErrorProneClasspath = []string{
-		"external/error_prone/error_prone/error_prone_core-2.3.2-with-dependencies.jar",
-		"external/error_prone/error_prone/error_prone_annotations-2.4.0.jar",
-		"external/error_prone/error_prone/error_prone_type_annotations-2.4.0.jar",
-		"external/error_prone/checkerframework/dataflow-2.5.3.jar",
-		"external/error_prone/checkerframework/javacutil-2.5.3.jar",
+		"external/error_prone/error_prone/error_prone_core-2.7.1-with-dependencies.jar",
+		"external/error_prone/error_prone/error_prone_annotations-2.7.1.jar",
+		"external/error_prone/error_prone/error_prone_type_annotations-2.7.1.jar",
+		"external/error_prone/checkerframework/dataflow-shaded-3.11.0.jar",
+		"external/error_prone/checkerframework/javacutil-3.11.0.jar",
 		"external/error_prone/jFormatString/jFormatString-3.0.0.jar",
 	}
 
@@ -80,7 +80,6 @@ func init() {
 		"-Xep:LiteByteStringUtf8:ERROR",
 		"-Xep:LoopConditionChecker:ERROR",
 		"-Xep:MissingTestCall:ERROR",
-		"-Xep:MockitoCast:ERROR",
 		"-Xep:MockitoUsage:ERROR",
 		"-Xep:MoreThanOneInjectableConstructor:ERROR",
 		"-Xep:MustBeClosedChecker:ERROR",
@@ -90,9 +89,6 @@ func init() {
 		"-Xep:OptionalEquality:ERROR",
 		"-Xep:OverlappingQualifierAndScopeAnnotation:ERROR",
 		"-Xep:PackageInfo:ERROR",
-		"-Xep:PreconditionsCheckNotNull:ERROR",
-		"-Xep:PreconditionsCheckNotNullPrimitive:ERROR",
-		"-Xep:PredicateIncompatibleType:ERROR",
 		"-Xep:PrivateSecurityContractProtoAccess:ERROR",
 		"-Xep:ProtoFieldNullComparison:ERROR",
 		"-Xep:ProtoStringFieldReferenceEquality:ERROR",
@@ -122,21 +118,34 @@ func init() {
 		"-Xep:ArrayHashCode:WARN",
 		"-Xep:ArrayToString:WARN",
 		"-Xep:ArraysAsListPrimitiveArray:WARN",
+		"-Xep:BadAnnotationImplementation:WARN",
 		"-Xep:BadShiftAmount:WARN",
 		"-Xep:ComparableType:WARN",
 		"-Xep:ComplexBooleanConstant:WARN",
+		"-Xep:CollectionToArraySafeParameter:WARN",
 		"-Xep:ConditionalExpressionNumericPromotion:WARN",
+		"-Xep:DangerousLiteralNull:WARN",
+		"-Xep:DurationFrom:WARN",
+		"-Xep:DurationTemporalUnit:WARN",
+		"-Xep:EqualsHashCode:WARN",
 		"-Xep:EqualsReference:WARN",
 		"-Xep:FormatString:WARN",
+		"-Xep:FromTemporalAccessor:WARN",
 		"-Xep:GetClassOnAnnotation:WARN",
 		"-Xep:GetClassOnClass:WARN",
 		"-Xep:GuardedBy:WARN",
 		"-Xep:HashtableContains:WARN",
 		"-Xep:IdentityBinaryExpression:WARN",
+		"-Xep:IdentityHashMapBoxing:WARN",
+		"-Xep:InstantTemporalUnit:WARN",
 		"-Xep:InvalidTimeZoneID:WARN",
+		"-Xep:InvalidZoneId:WARN",
+		"-Xep:IsInstanceIncompatibleType:WARN",
 		"-Xep:IsLoggableTagLength:WARN",
+		"-Xep:JUnitParameterMethodNotFound:WARN",
 		"-Xep:MathRoundIntLong:WARN",
 		"-Xep:MislabeledAndroidString:WARN",
+		"-Xep:MisusedDayOfYear:WARN",
 		"-Xep:MissingSuperCall:WARN",
 		"-Xep:MisusedWeekYear:WARN",
 		"-Xep:ModifyingCollectionWithItself:WARN",
@@ -144,16 +153,24 @@ func init() {
 		"-Xep:NullTernary:WARN",
 		"-Xep:OverridesJavaxInjectableMethod:WARN",
 		"-Xep:ParcelableCreator:WARN",
+		"-Xep:PeriodFrom:WARN",
+		"-Xep:PreconditionsInvalidPlaceholder:WARN",
+		"-Xep:ProtoBuilderReturnValueIgnored:WARN",
 		"-Xep:ProtocolBufferOrdinal:WARN",
+		"-Xep:ProtoFieldNullComparison:WARN",
 		"-Xep:RandomModInteger:WARN",
 		"-Xep:RectIntersectReturnValueIgnored:WARN",
+		"-Xep:RemovedInJDK11:WARN",
 		"-Xep:ReturnValueIgnored:WARN",
+		"-Xep:SelfAssignment:WARN",
 		"-Xep:SelfComparison:WARN",
 		"-Xep:SelfEquals:WARN",
 		"-Xep:SizeGreaterThanOrEqualsZero:WARN",
 		"-Xep:StringBuilderInitWithChar:WARN",
 		"-Xep:TryFailThrowable:WARN",
+		"-Xep:UnnecessaryCheckNotNull:WARN",
 		"-Xep:UnusedCollectionModifiedInPlace:WARN",
+		"-Xep:XorPower:WARN",
 
 		// Errorprone default severity WARNING
 		// "-Xep:AmbiguousMethodReference:WARN",
@@ -395,6 +412,23 @@ func init() {
 		// b/170172949
 		"-Xep:MissingOverride:OFF",
 		"-Xep:UnnecessaryParentheses:OFF",
+		// This triggers on android R classes, disable until we can ignore
+		// the generated R classes
+		"-Xep:MutablePublicArray:OFF",
+		// These checks crash
+		"-Xep:RethrowReflectiveOperationExceptionAsLinkageError:OFF",
+		"-Xep:InvalidLink:OFF",
+		// DoNotCall is a check with severity ERROR. Errorprone
+		// adds some hardcoded methods to be considered @DoNotCall,
+		// and they cause findings in external/junit. Disable this
+		// hardcoded list until we can exclude external code from errorprone.
+		"-XepOpt:DoNotCallChecker:CheckThirdPartyMethods=false",
+		// Commonly triggers for stubbed methods
+		"-Xep:DoNotCallSuggester:OFF",
+		"-Xep:MissingSummary:OFF",
+		// This check increates the `platformprotos` module's build
+		// time by ~15 minutes
+		"-Xep:SameNameButDifferent:OFF",
 	}
 
 	config.ErrorProneFlags = []string{
