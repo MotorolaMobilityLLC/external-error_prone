@@ -22,11 +22,11 @@ func init() {
 	// These values are set into build/soong/java/config/config.go so that soong doesn't have any
 	// references to external/error_prone, which may not always exist.
 	config.ErrorProneClasspath = []string{
-		"external/error_prone/error_prone/error_prone_core-2.7.1-with-dependencies.jar",
-		"external/error_prone/error_prone/error_prone_annotations-2.7.1.jar",
-		"external/error_prone/error_prone/error_prone_type_annotations-2.7.1.jar",
-		"external/error_prone/checkerframework/dataflow-shaded-3.11.0.jar",
-		"external/error_prone/checkerframework/javacutil-3.11.0.jar",
+		"external/error_prone/error_prone/error_prone_core-2.8.1-with-dependencies.jar",
+		"external/error_prone/error_prone/error_prone_annotations-2.8.1.jar",
+		"external/error_prone/error_prone/error_prone_type_annotations-2.8.1.jar",
+		"external/error_prone/checkerframework/dataflow-errorprone-3.15.0.jar",
+		"external/error_prone/checkerframework/javacutil-3.15.0.jar",
 		"external/error_prone/jFormatString/jFormatString-3.0.0.jar",
 	}
 
