@@ -20,8 +20,8 @@ EP_TYPE_ANNO_JAR_URL="${JAR_REPO}/error_prone_type_annotations/${EP_VERSION}/err
 EP_TEST_HELPERS_JAR_URL="${JAR_REPO}/error_prone_test_helpers/${EP_VERSION}/error_prone_test_helpers-${EP_VERSION}.jar"
 JAVAC_JAR_URL="${JAR_REPO}/javac/${JAVAC_VERSION}/javac-${JAVAC_VERSION}.jar"
 JAVAC_SOURCES_JAR_URL="${JAR_REPO}/javac/${JAVAC_VERSION}/javac-${JAVAC_VERSION}-sources.jar"
-CF_DATAFLOW_JAR_URL="https://repo1.maven.org/maven2/org/checkerframework/dataflow-shaded/${CF_VERSION}/dataflow-shaded-${CF_VERSION}.jar"
-CF_DATAFLOW_SOURCES_JAR_URL="https://repo1.maven.org/maven2/org/checkerframework/dataflow-shaded/${CF_VERSION}/dataflow-shaded-${CF_VERSION}-sources.jar"
+CF_DATAFLOW_JAR_URL="https://repo1.maven.org/maven2/org/checkerframework/dataflow-errorprone/${CF_VERSION}/dataflow-errorprone-${CF_VERSION}.jar"
+CF_DATAFLOW_SOURCES_JAR_URL="https://repo1.maven.org/maven2/org/checkerframework/dataflow-errorprone/${CF_VERSION}/dataflow-errorprone-${CF_VERSION}-sources.jar"
 CF_JAVACUTIL_JAR_URL="https://repo1.maven.org/maven2/org/checkerframework/javacutil/${CF_VERSION}/javacutil-${CF_VERSION}.jar"
 CF_JAVACUTIL_SOURCES_JAR_URL="https://repo1.maven.org/maven2/org/checkerframework/javacutil/${CF_VERSION}/javacutil-${CF_VERSION}-sources.jar"
 TOOLS_DIR=$(dirname $0)
@@ -68,7 +68,7 @@ if [ "${CF_VERSION}" != '' ]; then
   update_jar "${CF_VERSION}" "${CF_JAVACUTIL_JAR_URL}" "${TOOLS_DIR}/checkerframework"
   update_jar "${CF_VERSION}" "${CF_JAVACUTIL_SOURCES_JAR_URL}" "${TOOLS_DIR}/checkerframework"
   perl -pi -e "\
-    s|\"(external/error_prone/checkerframework/dataflow).*\"|\"\\1-${CF_VERSION}.jar\"|;\
+    s|\"(external/error_prone/checkerframework/dataflow-errorprone).*\"|\"\\1-${CF_VERSION}.jar\"|;\
     s|\"(external/error_prone/checkerframework/javacutil).*\"|\"\\1-${CF_VERSION}.jar\"|;\
   " "$TOOLS_DIR/soong/error_prone.go"
 fi
