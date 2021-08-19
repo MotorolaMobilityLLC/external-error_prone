@@ -11,12 +11,12 @@ third_party {
   }
   url {
     type: ARCHIVE
-    value: "https://repo1.maven.org/maven2/org/checkerframework/dataflow-shaded/3.11.0/dataflow-shaded-3.11.0.jar"
+    value: "https://repo1.maven.org/maven2/org/checkerframework/dataflow-errorprone/3.15.0/dataflow-errorprone-3.15.0-sources.jar"
   }
   url {
     type: ARCHIVE
-    value: "https://repo1.maven.org/maven2/org/checkerframework/javacutil/3.11.0/javacutil-3.11.0.jar"
+    value: "https://repo1.maven.org/maven2/org/checkerframework/javacutil/3.15.0/javacutil-3.15.0-sources.jar"
   }
-  version: "3.11.0"
-  last_upgrade_date { year: 2021 month: 6 day: 16}
+  version: "3.15.0"
+  last_upgrade_date { year: 2021 month: 8 day: 18}
 }
