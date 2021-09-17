@@ -53,6 +53,7 @@ func init() {
 		"-Xep:DoNotCall:ERROR",
 		"-Xep:EqualsNaN:ERROR",
 		"-Xep:EqualsWrongThing:ERROR",
+		"-Xep:ErroneousThreadPoolConstructorChecker:ERROR",
 		"-Xep:ForOverride:ERROR",
 		"-Xep:FormatStringAnnotation:ERROR",
 		"-Xep:FunctionalInterfaceMethodChanged:ERROR",
