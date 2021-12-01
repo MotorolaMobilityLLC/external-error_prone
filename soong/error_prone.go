@@ -22,9 +22,9 @@ func init() {
 	// These values are set into build/soong/java/config/config.go so that soong doesn't have any
 	// references to external/error_prone, which may not always exist.
 	config.ErrorProneClasspath = []string{
-		"external/error_prone/error_prone/error_prone_core-2.8.1-with-dependencies.jar",
-		"external/error_prone/error_prone/error_prone_annotations-2.8.1.jar",
-		"external/error_prone/error_prone/error_prone_type_annotations-2.8.1.jar",
+		"external/error_prone/error_prone/error_prone_core-2.10.0-with-dependencies.jar",
+		"external/error_prone/error_prone/error_prone_annotations-2.10.0.jar",
+		"external/error_prone/error_prone/error_prone_type_annotations-2.10.0.jar",
 		"external/error_prone/checkerframework/dataflow-errorprone-3.15.0.jar",
 		"external/error_prone/checkerframework/javacutil-3.15.0.jar",
 		"external/error_prone/jFormatString/jFormatString-3.0.0.jar",
@@ -62,7 +62,6 @@ func init() {
 		"-Xep:GuiceAssistedParameters:ERROR",
 		"-Xep:GuiceInjectOnFinalField:ERROR",
 		"-Xep:Immutable:ERROR",
-		"-Xep:ImmutableModification:ERROR",
 		"-Xep:IncompatibleArgumentType:ERROR",
 		"-Xep:IndexOfChar:ERROR",
 		"-Xep:InexactVarargsConditional:ERROR",
@@ -419,11 +418,6 @@ func init() {
 		// These checks crash
 		"-Xep:RethrowReflectiveOperationExceptionAsLinkageError:OFF",
 		"-Xep:InvalidLink:OFF",
-		// DoNotCall is a check with severity ERROR. Errorprone
-		// adds some hardcoded methods to be considered @DoNotCall,
-		// and they cause findings in external/junit. Disable this
-		// hardcoded list until we can exclude external code from errorprone.
-		"-XepOpt:DoNotCallChecker:CheckThirdPartyMethods=false",
 		// Commonly triggers for stubbed methods
 		"-Xep:DoNotCallSuggester:OFF",
 		"-Xep:MissingSummary:OFF",
