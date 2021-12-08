@@ -50,6 +50,7 @@ java_import {
     name: "error_prone_annotations",
     host_supported: true,
     jars: ["error_prone/error_prone_annotations-2.10.0.jar"],
+    min_sdk_version : "29",
     apex_available: [
         "//apex_available:anyapex",
         "//apex_available:platform",
