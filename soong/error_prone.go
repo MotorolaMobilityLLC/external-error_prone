@@ -26,7 +26,6 @@ func init() {
 		"external/error_prone/error_prone/error_prone_annotations-2.10.0.jar",
 		"external/error_prone/error_prone/error_prone_type_annotations-2.10.0.jar",
 		"external/error_prone/checkerframework/dataflow-errorprone-3.15.0.jar",
-		"external/error_prone/checkerframework/javacutil-3.15.0.jar",
 		"external/error_prone/jFormatString/jFormatString-3.0.0.jar",
 	}
 
