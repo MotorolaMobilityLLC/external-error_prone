@@ -69,7 +69,6 @@ java_import {
     host_supported: true,
     jars: [
         "checkerframework/dataflow-errorprone-3.15.0.jar",
-        "checkerframework/javacutil-3.15.0.jar",
         "error_prone/error_prone_core-2.10.0-with-dependencies.jar",
         "error_prone/error_prone_annotations-2.10.0.jar",
         "javac/javac-9+181-r4173-1.jar",

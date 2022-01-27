@@ -22,8 +22,6 @@ JAVAC_JAR_URL="${JAR_REPO}/javac/${JAVAC_VERSION}/javac-${JAVAC_VERSION}.jar"
 JAVAC_SOURCES_JAR_URL="${JAR_REPO}/javac/${JAVAC_VERSION}/javac-${JAVAC_VERSION}-sources.jar"
 CF_DATAFLOW_JAR_URL="https://repo1.maven.org/maven2/org/checkerframework/dataflow-errorprone/${CF_VERSION}/dataflow-errorprone-${CF_VERSION}.jar"
 CF_DATAFLOW_SOURCES_JAR_URL="https://repo1.maven.org/maven2/org/checkerframework/dataflow-errorprone/${CF_VERSION}/dataflow-errorprone-${CF_VERSION}-sources.jar"
-CF_JAVACUTIL_JAR_URL="https://repo1.maven.org/maven2/org/checkerframework/javacutil/${CF_VERSION}/javacutil-${CF_VERSION}.jar"
-CF_JAVACUTIL_SOURCES_JAR_URL="https://repo1.maven.org/maven2/org/checkerframework/javacutil/${CF_VERSION}/javacutil-${CF_VERSION}-sources.jar"
 TOOLS_DIR=$(dirname $0)
 
 function update_jar {
@@ -65,10 +63,7 @@ if [ "${CF_VERSION}" != '' ]; then
   rm -f checkerframework/*.jar*
   update_jar "${CF_VERSION}" "${CF_DATAFLOW_JAR_URL}" "${TOOLS_DIR}/checkerframework"
   update_jar "${CF_VERSION}" "${CF_DATAFLOW_SOURCES_JAR_URL}" "${TOOLS_DIR}/checkerframework"
-  update_jar "${CF_VERSION}" "${CF_JAVACUTIL_JAR_URL}" "${TOOLS_DIR}/checkerframework"
-  update_jar "${CF_VERSION}" "${CF_JAVACUTIL_SOURCES_JAR_URL}" "${TOOLS_DIR}/checkerframework"
   perl -pi -e "\
     s|\"(external/error_prone/checkerframework/dataflow-errorprone).*\"|\"\\1-${CF_VERSION}.jar\"|;\
-    s|\"(external/error_prone/checkerframework/javacutil).*\"|\"\\1-${CF_VERSION}.jar\"|;\
   " "$TOOLS_DIR/soong/error_prone.go"
 fi
