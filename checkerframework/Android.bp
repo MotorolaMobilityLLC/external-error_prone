@@ -30,5 +30,5 @@ license {
 java_import {
     name: "error_prone_checkerframework_dataflow_errorprone",
     host_supported: true,
-    jars: ["dataflow-errorprone-3.15.0.jar"],
+    jars: ["dataflow-errorprone-3.21.2.jar"],
 }
