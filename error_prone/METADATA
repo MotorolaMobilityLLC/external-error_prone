@@ -13,5 +13,5 @@ third_party {
     value: "https://oss.sonatype.org/service/local/repositories/releases/content/com/google/errorprone/error_prone_core/2.11.0/error_prone_core-2.11.0-with-dependencies.jar"
   }
   version: "2.11.0"
-  last_upgrade_date { year: 2022 month: 2 day: 3}
+  last_upgrade_date { year: 2022 month: 2 day: 14}
 }
