@@ -127,7 +127,6 @@ func init() {
 		"-Xep:DurationFrom:WARN",
 		"-Xep:DurationTemporalUnit:WARN",
 		"-Xep:EqualsHashCode:WARN",
-		"-Xep:EqualsNull:WARN",
 		"-Xep:EqualsReference:WARN",
 		"-Xep:FormatString:WARN",
 		"-Xep:FromTemporalAccessor:WARN",
