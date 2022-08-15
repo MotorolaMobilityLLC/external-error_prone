@@ -113,10 +113,6 @@ func init() {
 	// The checks that are not fatal to the build.
 	config.ErrorProneChecksWarning = []string{
 		// Errorprone default severity ERROR
-		"-Xep:ArrayEquals:WARN",
-		"-Xep:ArrayHashCode:WARN",
-		"-Xep:ArrayToString:WARN",
-		"-Xep:ArraysAsListPrimitiveArray:WARN",
 		"-Xep:BadAnnotationImplementation:WARN",
 		"-Xep:BadShiftAmount:WARN",
 		"-Xep:BanJNDI:WARN",
