@@ -202,6 +202,8 @@ func init() {
 		// This check increates the `platformprotos` module's build
 		// time by ~15 minutes
 		"-Xep:SameNameButDifferent:OFF",
+		// Noisy and requires projects to add a dependency on errorprone annotations
+		"-Xep:CanIgnoreReturnValueSuggester:OFF",
 	}
 
 	config.ErrorProneFlags = []string{
