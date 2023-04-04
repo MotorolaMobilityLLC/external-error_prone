@@ -63,6 +63,7 @@ java_library {
         "error_prone_javac",
         "error_prone_jFormatString",
     ],
+    sdk_version: "core_current",
 }
 
 java_import {
